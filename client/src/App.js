@@ -1,12 +1,14 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
+import Header from './components/Header/Header';
+// import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import DrStrangeBackground from './assets/drstrange_background.png'
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">      
-        {/* <Counter />     */}
-        <h1>Hello World!</h1>
+    <div> 
+        <Header />   
+        <img src={DrStrangeBackground} alt="Dr Strange" style={{width:"80%", height:"50%", alignContent:"center", justifyContent:"center", paddingLeft:"10%", paddingRight:"10%"}}/>
     </div>
   );
 }
