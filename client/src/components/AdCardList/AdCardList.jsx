@@ -1,0 +1,39 @@
+import React from 'react'
+import BobaFett from '../../assets/boba_fett.png'
+import DeathStar from '../../assets/death_star.png'
+import ShopDisney from '../../assets/shop_disney.png'
+import DisneyPlusAnime from '../../assets/disney_plus_anime.png'
+import './AdCardList.scss'
+
+const AdCardList = () => {
+  return (
+    <div className='card-list'>
+        <div className='card'>
+            <img src={BobaFett} alt="Boba Fett" />
+            <h3>The Book of Boba Fett</h3>
+            <p>All episodes are Streaming on Disney+</p>
+            <a href='/'>STREAM NOW</a>
+        </div>
+        <div className='card'>
+            <img src={DeathStar} alt="Star Wars Collection" />
+            <h3>The Star Wars Collection</h3>
+            <p>Stream All of Your Star Wars Favorites Now on Disney+</p>
+            <a href='/'>STREAM NOW</a>
+        </div>
+        <div className='card'>
+            <img src={ShopDisney} alt="Shop" />
+            <h3>shopDisney</h3>
+            <p>Star Wars Day is Here! Celebrate in True Jedi Fashion with our Out-of-This-World Finds</p>
+            <a href='/'>SHOP NOW</a>
+        </div>
+        <div className='card'>
+            <img src={DisneyPlusAnime} alt="Disney Star Wars Anime" />
+            <h3>Streaming on Disney+</h3>
+            <p>Seven Japanese Anime Studios Bring Their Unique Talent and Perspective to Star Wars: Visions</p>
+            <a href='/'>STREAM NOW</a>
+        </div>
+    </div>
+  )
+}
+
+export default AdCardList

@@ -1,0 +1,30 @@
+.modal-background {
+ width:100vw;
+ height:100vh;
+ position:fixed;
+ justify-content: center;
+ align-items: center;
+ display:flex;
+ color:white; 
+}
+
+.modal-container {
+    width:300px;
+    height:300px;
+    border-radius:12px;
+    background-color: #282a2c;
+    display:flex;
+    flex-direction: column;
+    padding:25px;
+}
+
+.close-button {
+    width:'40px';
+    font-size:'20px';
+    display:'flex';
+    align-items: flex-end;
+    margin-left: 280px;
+    //!!!! THIS MARGIN NEEDS TO BE FIXED
+    justify-content:'flex-end';
+    background-color: blue;
+}

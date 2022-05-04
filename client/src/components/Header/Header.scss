@@ -7,4 +7,13 @@
     grid-template-columns: 900px 150px 150px;
     margin-left: 10%;
     margin-right: 20%;
+
+    button {
+        background-color:transparent; 
+        color:white; 
+        line-height:4em; 
+        display:flex;
+        justify-content:flex-end; 
+        border:none;
+    }
 }
