@@ -1,0 +1,54 @@
+.main-content-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr; 
+    margin-right: 280px; 
+
+    p {
+        color:white
+    }
+      
+}
+
+.background-image {
+    width:80%;
+    height:600px;
+    display:grid;
+    align-content:center;
+    justify-content:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:auto;
+    transition: transform .2s;
+}
+
+.button {
+    border-radius:40px;
+    font-size:15px;
+    color:white;
+    width:240px;
+    height:48px;
+    font-weight:bold;
+}
+
+.get-tix-button {
+    background-color:#AF2726;
+    border:none;
+    border-radius:40px;
+    font-size:15px;
+    color:white;
+    width:240px;
+    height:48px;
+    font-weight:bold;
+
+    
+}
+
+.get-tix-button:hover {
+    background-color: #c72c2c;
+}
+
+
+
+// .background-image:hover {
+//     transform: scale(1.1); 
+//  }
