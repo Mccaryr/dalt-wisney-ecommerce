@@ -1,22 +1,26 @@
-import { useState } from 'react';
+import {Routes, Route} from 'react-router-dom'
+import {useState} from 'react'
 import Header from './components/Header/Header';
-// import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import MainContent from './components/MainContent/MainContent';
-import AdCardList from './components/AdCardList/AdCardList';
-import SignInModal from './components/SignInModal/SignInModal';
-import './App.scss';
+import Home from './Home';
+import Shop from './components/Shop/Shop';
+import SignInModal from './components/SignInModal/SignInModal'
 
-function App() {
+const App = () => {
+
   const [modalStatus, setModalStatus] = useState(false)
-
+  const [signedIn, setSignedIn] = useState(false)
 
   return (
-    <div> 
-        {modalStatus &&<SignInModal closeModal={setModalStatus}/>}
-        <Header openModal={setModalStatus}/>
-        <MainContent />
-        <AdCardList />
+    <div>
+      {modalStatus &&<SignInModal closeModal={setModalStatus} signedInStatus={setSignedIn}/>}
+          <Header openModal={setModalStatus} signedInStatus={signedIn} />
+    <Routes>
+      <Route path='/' element={<Header />} />
+        <Route index element={<Home />} />
+        <Route path='/shop' element={<Shop />} />
+    </Routes>
     </div>
+        
   );
 }
 
