@@ -1,9 +1,16 @@
 import React from 'react'
 import ShopCard from '../ShopCard/ShopCard'
+import './ShopCardList.scss'
 
 const ShopCardList = () => {
   return (
-    <div><ShopCard/></div>
+    <div className='shop-card-list'>
+      <ShopCard/>
+      <ShopCard/>
+      <ShopCard/>
+      <ShopCard/>
+      <ShopCard/>
+    </div>
   )
 }
 
