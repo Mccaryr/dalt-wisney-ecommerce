@@ -1,17 +1,16 @@
 import React from 'react'
-import DrStrangeBackground from '../../../assets/drstrange_background.png'
 import './ShopCard.scss'
 
-const ShopCard = () => {
+const ShopCard = ({product}) => {
   return (
-    <div className='shop-card'>
-        <img alt="disney product" src={DrStrangeBackground} />
+          <div className='shop-card'> 
+          <img alt="disney product" src={product.url} />
         <div>
-            <span>Name</span>
+            <span>{product.name}</span>
             <br />
-            <span>Price</span>
+            <span>{product.price}</span>
         </div>
-    </div>
+        </div>
   )
 }
 
