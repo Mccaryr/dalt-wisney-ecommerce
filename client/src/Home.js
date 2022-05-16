@@ -1,6 +1,7 @@
 import MainContent from './components/MainContent/MainContent';
 import AdCardList from './components/AdCardList/AdCardList';
 import DisneyNews from './components/DisneyNews/DisneyNews';
+import DisneyPlusTrending from './components/DisneyPlusTrending/DisneyPlusTrending';
 
 const Home = () => {
   
@@ -10,6 +11,7 @@ const Home = () => {
           <MainContent />
           <AdCardList />
           <DisneyNews />
+          <DisneyPlusTrending />
       </div>
     );
 }

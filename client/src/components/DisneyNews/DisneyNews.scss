@@ -17,14 +17,27 @@
         
 
         .news-card-text {
-            text-align: center;    
-            padding: 16px 16px 4px;
+            padding: 0px 10px 0px 10px;
+
+            span {
+                font-size: 17px;
+                font-weight: 900;
+            }
+
+            h5 {
+                font-size: 0.625rem;
+                letter-spacing: 1.6px;
+            }
+
+            p {
+                font-size: 10px;
+            }
     
         }
         
 
         img {
-            height:40%;
+            height:50%;
             width:100%;
             overflow: hidden;
             object-fit: cover;

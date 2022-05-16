@@ -1,0 +1,28 @@
+.disney-plus-trending-container {
+    background-color: #152238;
+    color:white;
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom:2rem;
+    
+    
+    .disney-images-trending {
+        display: flex;
+        gap: 10px;
+
+        img {
+            width:80%;
+        }
+    }
+
+    .disney-plus-trending-text-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}
