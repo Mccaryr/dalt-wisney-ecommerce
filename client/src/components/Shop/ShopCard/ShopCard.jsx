@@ -8,7 +8,8 @@ const ShopCard = ({product}) => {
         <div>
             <span>{product.name}</span>
             <br />
-            <span>{product.price}</span>
+            <span>${product.price}</span>
+            <button className='on-hover-visible-button'>Add To Bag</button>
         </div>
         </div>
   )

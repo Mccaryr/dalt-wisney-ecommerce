@@ -3,7 +3,7 @@
     text-align: center;
     box-sizing: border-box;
     overflow: hidden;
-    
+    height: 20rem;
 
 
     img {
@@ -13,4 +13,28 @@
         overflow:hidden;
     }
 
+    .on-hover-visible-button {
+        display: none;
+        margin-left: 5px;
+        border-radius:8px;
+        background-color: transparent;
+        color:white;
+        border: 2px solid white;
+        height: 40px;
+        padding: 2px 10px 2px 10px;
+        cursor: pointer;
+    }
+
+    
+
+}
+
+.shop-card:hover .on-hover-visible-button {
+    display: inline-block;
+
+}
+
+.on-hover-visible-button:hover {
+    color: rgb(0, 140, 255);
+    border: 2px solid rgb(0, 140, 255);
 }
