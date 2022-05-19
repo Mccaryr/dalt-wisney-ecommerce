@@ -14,13 +14,14 @@ const shopSlice = createSlice({
   name: 'products',
   initialState: {
       productList: [],
+      cart: [],
       status: null
   },
-//   reducers: {
-//     fetchShopData: (state, action) => {
-//         // const products = async fetch('localhost:5000/products')
-//     }
-//   }, 
+  reducers: {
+    addToCart: (state, action) => {
+        state.cart.push(action.payload)
+    }
+  }, 
   extraReducers: {
     [getProducts.pending]: (state, action) => {
         state.status = 'loading'
@@ -35,6 +36,6 @@ const shopSlice = createSlice({
   }
 });
 
-// export const {} = shopSlice.actions
+export const {addToCart} = shopSlice.actions
 
 export default shopSlice.reducer

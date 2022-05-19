@@ -15,8 +15,8 @@ const App = () => {
 
   return (
     <div>
-      {modalStatus &&<SignInModal closeModal={setModalStatus} signedInStatus={setSignedIn}/>}
-          <Header openModal={setModalStatus} signedInStatus={signedIn} />
+      {modalStatus &&<SignInModal closeModal={setModalStatus} setSignedInStatus={setSignedIn}/>}
+          <Header openModal={setModalStatus} signedInStatus={signedIn} setSignedInStatus={setSignedIn}  />
     <Routes>
       <Route path='/' element={<Header />} />
         <Route index element={<Home />} />

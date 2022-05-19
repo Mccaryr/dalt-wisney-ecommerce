@@ -1,14 +1,23 @@
-import React from 'react'
+import { useState } from 'react'
 import DisneyAccount from '../../assets/disney_account.png'
 import { signInWithGooglePopup } from '../../firebase'
 import './SignInModal.scss'
 
-const SignInModal = ({closeModal, signedInStatus}) => {
+const SignInModal = ({closeModal, setSignedInStatus}) => {
+
 
   const logGoogleUser = async () => {
-    const response = await signInWithGooglePopup();
-    signedInStatus(true);
-    closeModal(false)
+
+    try {
+      const response = await signInWithGooglePopup();
+      localStorage.setItem('user', response.user.email);
+      setSignedInStatus(true);
+      closeModal(false)
+    }
+
+    catch(error) {
+      console.log(error.message)
+    }
   }
 
   return (

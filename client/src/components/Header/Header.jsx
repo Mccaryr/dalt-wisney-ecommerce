@@ -3,12 +3,19 @@ import SearchBar from '../SearchBar/SearchBar'
 import ShoppingCartIcon from '../../assets/shopping_cart_icon.png'
 import './Header.scss'
 
-const Header = ({openModal, signedInStatus}) => {
+const Header = ({openModal, signedInStatus, setSignedInStatus}) => {
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    setSignedInStatus(false)
+    console.log(signedInStatus)
+  }
+
   return (
     <div className='header-container'>
         <NavBar />
         {signedInStatus ?
-        <p style={{color:'white'}}>SIGNED IN</p>
+        <button style={{color:'white'}} onClick={() => logout()}>LOGOUT</button>
         : <button onClick={()=> openModal(true)} style={{padding:'8px'}}>SIGN IN</button>
         }
         <button style={{padding:'8px'}}><img src={ShoppingCartIcon} alt="Shopping Cart" />My Cart (0)</button>

@@ -8,7 +8,8 @@ const ShopCardList = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(getProducts())
+    dispatch(getProducts());
+    console.log(localStorage.getItem('user'))
   }, [dispatch])
   
   const productData = useSelector((state) => state.products.productList)
@@ -17,7 +18,7 @@ const ShopCardList = () => {
     <div className='shop-card-list'>
       {productData.map((product) => (
 
-        <ShopCard product={product} key={product.id}/>
+        <ShopCard product={product} key={`${product.id}${product.name}`}/>
       ))}
     </div>
   )
