@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import DisneyAccount from '../../assets/disney_account.png'
 import { signInWithGooglePopup } from '../../firebase'
 import './SignInModal.scss'
@@ -10,7 +9,7 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
 
     try {
       const response = await signInWithGooglePopup();
-      localStorage.setItem('user', response.user.email);
+      sessionStorage.setItem('user', response.user.email);
       setSignedInStatus(true);
       closeModal(false)
     }

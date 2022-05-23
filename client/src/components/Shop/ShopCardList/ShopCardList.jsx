@@ -9,7 +9,6 @@ const ShopCardList = () => {
   
   useEffect(() => {
     dispatch(getProducts());
-    console.log(localStorage.getItem('user'))
   }, [dispatch])
   
   const productData = useSelector((state) => state.products.productList)

@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const getProducts = createAsyncThunk(
     'products/getProducts',
     async () => {
-        return await fetch('http://localhost:5000/products').then((res) => 
+        return await fetch('http://localhost:5000/api/products').then((res) => 
             res.json()
         )
     }
@@ -19,7 +19,9 @@ const shopSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-        state.cart.push(action.payload)
+        state.cart.push(action.payload);
+        sessionStorage.removeItem('cart');
+        sessionStorage.setItem('cart', JSON.stringify(state.cart));
     }
   }, 
   extraReducers: {

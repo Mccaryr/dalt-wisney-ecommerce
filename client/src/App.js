@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Header from './components/Header/Header';
 import Home from './Home';
 import Shop from './components/Shop/Shop';
@@ -11,6 +11,13 @@ const App = () => {
 
   const [modalStatus, setModalStatus] = useState(false)
   const [signedIn, setSignedIn] = useState(false)
+
+
+  useEffect (() => {
+    if(sessionStorage.getItem('user')) {
+      setSignedIn(true)
+    }
+  }, [])
   
 
   return (

@@ -6,9 +6,8 @@ import './Header.scss'
 const Header = ({openModal, signedInStatus, setSignedInStatus}) => {
 
   const logout = () => {
-    localStorage.removeItem('user');
+    sessionStorage.clear();
     setSignedInStatus(false)
-    console.log(signedInStatus)
   }
 
   return (
