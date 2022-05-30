@@ -1,17 +1,30 @@
 const express = require('express');
 const cart = require('../models/cart');
 const router = express.Router();
-const Cart = require('../models/cart')
 
-router.post('/', async (req, res) => {
-    const cartItems = {user_email: req.body.user_email, cart: req.body.cart}
-    const newCartItem = new cart(cartItems);
+
+// router.post('/', async (req, res) => {
+//     const reqCartItem = {user_email: req.body.user_email, product_name: req.body.product_name, qty: req.body.qty}
+//     const newCartItem = new cart(reqCartItem);
+    
+//     try {
+//         newCartItem.save();
+//         console.log(newCartItem);
+//     } catch(error) {
+//         res.status(500).json({ message: error.message })
+//     }
+// })
+
+router.put('/', async (req, res) => {
+    
+    const reqCartItem = {user_email: req.body.user_email, cart:req.body.cart}
+    const newCart = new cart(reqCartItem);
 
     try {
-        newCartItem.save();
-        console.log(newCartItem);
+        newCart.save();
+        console.log(newCart)
     } catch(error) {
-        res.status(500).json({ message: error.message })
+        res.status(500).json({message: error.message})
     }
 })
 

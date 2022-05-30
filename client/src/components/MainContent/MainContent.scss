@@ -1,7 +1,14 @@
 .main-content-container {
+    margin-bottom: 5vh;
+}
+
+
+
+.background-image-container {
     display: grid;
     grid-template-rows: 2fr 1fr 1fr 1fr; 
     margin-right: 280px; 
+    
 
     p {
         color:white

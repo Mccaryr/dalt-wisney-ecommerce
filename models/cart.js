@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const cartSchema = new mongoose.Schema({
-    user_email: {type: String, required: true},
+    user_email: {type: String, required: true}, 
     cart: {type: Array, required: true}
 }, {timestamps: true})
 

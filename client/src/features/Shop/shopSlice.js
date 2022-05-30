@@ -20,8 +20,9 @@ const shopSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
         state.cart.push(action.payload);
-        sessionStorage.removeItem('cart');
-        sessionStorage.setItem('cart', JSON.stringify(state.cart));
+        debugger;
+        // sessionStorage.removeItem('cart');
+        // sessionStorage.setItem('cart', JSON.stringify(state.cart));
     }
   }, 
   extraReducers: {

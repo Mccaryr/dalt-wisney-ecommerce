@@ -20,6 +20,9 @@ app.use('/api/products', productsRouter)
 const cartRouter = require('./routes/cart')
 app.use('/api/cart', cartRouter)
 
+const userRouter = require('./routes/user')
+app.use('/user', userRouter)
+
 app.use("*", (req, res) => res.status(404).json({error: "Not Found"}))
 
 app.listen(5000, () => console.log('Server Started'))
