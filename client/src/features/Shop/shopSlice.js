@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 export const getProducts = createAsyncThunk(
     'products/getProducts',
@@ -20,9 +21,9 @@ const shopSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
         state.cart.push(action.payload);
-        debugger;
-        // sessionStorage.removeItem('cart');
-        // sessionStorage.setItem('cart', JSON.stringify(state.cart));
+        const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
+        const user_id = JSON.parse(sessionStorage.getItem('user'))._id
+        axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
     }
   }, 
   extraReducers: {

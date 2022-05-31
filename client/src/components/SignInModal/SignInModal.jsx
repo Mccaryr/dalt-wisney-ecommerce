@@ -11,9 +11,12 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
 
     try {
       await axios.get(`http://localhost:5000/user/${emailInput}`).then((response) => {
-        sessionStorage.setItem('user', JSON.stringify(response.data[0]));
-        setSignedInStatus(true)
-        closeModal(false)
+        sessionStorage.setItem('user', JSON.stringify(response.data[0]));        
+        if(sessionStorage.getItem('user') !== "undefined") {
+          setSignedInStatus(true)
+          closeModal(false)
+        }
+        
       }).catch((error) =>{
         console.log(error)
       })
