@@ -11,6 +11,7 @@ export const getProducts = createAsyncThunk(
 )
 
 
+
 const shopSlice = createSlice({
   name: 'products',
   initialState: {
@@ -19,11 +20,19 @@ const shopSlice = createSlice({
       status: null
   },
   reducers: {
-    addToCart: (state, action) => {
+    addToCart: (state, action) => {    
         state.cart.push(action.payload);
         const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
+        sessionStorage.setItem('cartCount', state.cart.length)
         axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+    },
+    getCart: (state, action) => {
+        //nesting arrays issue and deleting items inappropriately
+        state.cart = []
+        // state.cart.push(action.payload)
+        state.cart.push(...action.payload);
+        sessionStorage.setItem('cartCount', state.cart.length)
     }
   }, 
   extraReducers: {
@@ -40,6 +49,6 @@ const shopSlice = createSlice({
   }
 });
 
-export const {addToCart} = shopSlice.actions
+export const {addToCart, getCart} = shopSlice.actions
 
 export default shopSlice.reducer

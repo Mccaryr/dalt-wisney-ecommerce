@@ -4,30 +4,48 @@ const cart = require('../models/cart');
 const router = express.Router();
 
 
-// router.post('/', async (req, res) => {
-//     const reqCartItem = {user_email: req.body.user_email, product_name: req.body.product_name, qty: req.body.qty}
-//     const newCartItem = new cart(reqCartItem);
-    
-//     try {
-//         newCartItem.save();
-//         console.log(newCartItem);
-//     } catch(error) {
-//         res.status(500).json({ message: error.message })
-//     }
-// })
+//Remember to res to every request or server will hang until timeout
 
 router.put('/:user_id', async (req, res) => {
     const user_id = req.params.user_id
-    const user_email = req.body.user_email
     const cart_array = req.body.cart
-    console.log("got to BE");
-    const newCart = new cart({user_email: user_email, user_id: user_id, cart: cart_array})
 
-       let doc = await cart.findOneAndUpdate({user_id: user_id}, {cart: cart_array}, {new: true, upsert: true}).then((err) => {
+    let usersCart = await cart.findOneAndUpdate({user_id: user_id}, {cart: cart_array}, {new: true, upsert: true}).then((err) => {
             if (err){
-                console.log(err)
+                res.send({message: err})
+            }
+            else {
+                res.send(usersCart)
             }  
         })
+});
+
+router.get('/:user_id', async (req, res) => {
+    const user_id = req.params.user_id
+    try {
+        let userCart = await cart.findOne({user_id: user_id})
+        res.send(userCart)
+        
+    } catch(err) {
+        res.send({message: err})
+    }
+    
 })
+
+/*
+Better design pattern to separate routers, models, and controllers
+
+    router
+        .route('/')
+        .get(controllers.getexample)
+        .post(controllers.createexample)
+
+
+    router
+        .route('/:id')
+        .get()
+        .put()
+        .delete()
+**/
 
 module.exports = router

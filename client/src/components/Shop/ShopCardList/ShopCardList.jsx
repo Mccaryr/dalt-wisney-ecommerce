@@ -6,12 +6,12 @@ import './ShopCardList.scss'
 
 const ShopCardList = () => {
   const dispatch = useDispatch();
+  const productData = useSelector((state) => state.products.productList)
   
   useEffect(() => {
     dispatch(getProducts());
-  }, [dispatch])
+  }, [dispatch]);
   
-  const productData = useSelector((state) => state.products.productList)
 
   return (
     <div className='shop-card-list'>
