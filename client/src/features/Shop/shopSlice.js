@@ -20,18 +20,38 @@ const shopSlice = createSlice({
       status: null
   },
   reducers: {
-    addToCart: (state, action) => {    
-        state.cart.push(action.payload);
+    addToCart: (state, action) => {
         const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
-        sessionStorage.setItem('cartCount', state.cart.length)
+        const itemExist = state.cart.find(item => item._id === action.payload._id)
+        if(!itemExist){
+            state.cart.push(action.payload)
+        }
+        else {
+            state.cart.map(item => {
+                if(item._id === action.payload._id) {
+                    console.log(action.payload)
+                    item.qty = item.qty + 1
+                }
+            })
+        }
         axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        sessionStorage.setItem('cartCount', state.cart.length)
     },
     getCart: (state, action) => {
-        //nesting arrays issue and deleting items inappropriately
         state.cart = []
-        // state.cart.push(action.payload)
         state.cart.push(...action.payload);
+        sessionStorage.setItem('cartCount', state.cart.length)
+    },
+    removeFromCart: (state, action) => {
+        const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
+        const user_id = JSON.parse(sessionStorage.getItem('user'))._id
+       let filteredList = state.cart.filter(item => {
+            return item._id !== action.payload._id
+            
+        })
+        state.cart = filteredList;
+        axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         sessionStorage.setItem('cartCount', state.cart.length)
     }
   }, 
@@ -49,6 +69,6 @@ const shopSlice = createSlice({
   }
 });
 
-export const {addToCart, getCart} = shopSlice.actions
+export const {addToCart, getCart, removeFromCart} = shopSlice.actions
 
 export default shopSlice.reducer

@@ -29,7 +29,7 @@ const ShopCard = ({product}) => {
 
   const addToCartDB = () => {
     if(sessionStorage.getItem('user')) {
-      dispatch(addToCart(product));
+      dispatch(addToCart({_id: product._id, name: product.name, price: product.price, url: product.url, qty: 1}));
     }
     else {
       alert("Please sign in to add items to cart")
