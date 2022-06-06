@@ -2,4 +2,37 @@
     .hamburger-menu {
         display: none;
     }
+
+    .mobile-navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 949px) {
+    .hamburger-menu {
+        color:white;
+        
+    }
+
+    .mobile-navbar {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        background-color: #2d3033;
+        border-radius: 10px;
+        width: 100%;
+        
+        hr{
+            color:white;
+            width:100vw;
+        }
+
+        a {
+            color:white;
+            padding: 20px;
+        }
+    }
 }

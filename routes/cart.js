@@ -4,8 +4,6 @@ const cart = require('../models/cart');
 const router = express.Router();
 
 
-//Remember to res to every request or server will hang until timeout
-
 router.put('/:user_id', async (req, res) => {
     const user_id = req.params.user_id
     const cart_array = req.body.cart
