@@ -11,14 +11,7 @@ const Cart = () => {
 
     const getUserCart = async () => {
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
-        // try {
-        //     await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
-        //         setUserCart(response.data.cart)
-        //         console.log(userCart)
-        //     })
-        // } catch (err) {
-        //     console.log(err)
-        // }
+        
         try {
             await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
               if(response.data.cart){
@@ -42,19 +35,32 @@ const Cart = () => {
     }, [])
 
   return (
-    <div className="cart-container">
-        <div>
+    <div className="outer-cart-container">
+      <h1>My Bag ({sessionStorage.getItem('cartCount')})</h1>
+      <p>____________________________________________</p>
+      <div className='inner-cart-container'>
+        <div className='bag-container'>
             {userCart.map(cartItem => (
-                <div key={cartItem.name}>
-                <h3>{cartItem.name}</h3>
-                <img src={cartItem.url} alt={cartItem.name} />
-                <p>${cartItem.price}</p>
-                <p>Qty: {cartItem.qty}</p>
-                <button style={{color:"white", backgroundColor:"red"}} onClick={() => dispatch(removeFromCart(cartItem))}>Remove from Cart</button>
+                <div className='cart-item' key={cartItem.name}>
+                  <img className='cart-image' src={cartItem.url} alt={cartItem.name} />
+                <div className='bag-text'>
+                  <h4>{cartItem.name}</h4>
+                  <p>${cartItem.price}</p>
+                  <p>Qty: {cartItem.qty}</p>
+                  <button onClick={() => dispatch(removeFromCart(cartItem))}>Remove from Cart</button>
+                </div>
                 </div>
             ))}
+            </div>
+        <div className='order-container'>
+          <h3>Order Summary</h3>
+          <p>Subtotal</p>
+          <p>Est.Shipping and Handling </p>
+          <p>Est. Sales Tax</p>
+          <p>Total</p>
+        <button>Checkout</button>
         </div>
-        <button>Continue to checkout</button>
+      </div>
     </div>
   )
 }

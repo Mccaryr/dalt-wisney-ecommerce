@@ -1,11 +1,14 @@
 import DisneyAccount from '../../assets/disney_account.png'
-// import { signInWithGooglePopup } from '../../firebase'
-import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { getCart } from '../../features/Shop/shopSlice'
 import './SignInModal.scss'
 import axios from 'axios'
 
 const SignInModal = ({closeModal, setSignedInStatus}) => {
   const [emailInput, setEmailInput] = useState('')
+  const dispatch = useDispatch();
+
 
   const loginUser = async () => {
 
@@ -27,6 +30,27 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
       console.log(error.message)
     }
   }
+
+  const getUserCart = async () => {
+    const user_id = JSON.parse(sessionStorage.getItem('user'))._id
+    try {
+        await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
+          if(response.data.cart){
+            dispatch(getCart(response.data.cart))
+          } 
+
+            
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+  useEffect(() => {
+    if(sessionStorage.getItem('user')){
+      getUserCart()
+    }
+}, [])
 
   return (
     <div className='modal-background'>

@@ -1,29 +1,12 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import { useDispatch} from 'react-redux'
 import { addToCart, getCart } from '../../../features/Shop/shopSlice'
-import axios from 'axios'
 import './ShopCard.scss'
 
 
 const ShopCard = ({product}) => {
   const dispatch = useDispatch();
 
-
-    const getUserCart = async () => {
-        const user_id = JSON.parse(sessionStorage.getItem('user'))._id
-        try {
-            await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
-              if(response.data.cart){
-                dispatch(getCart(response.data.cart))
-              } 
-
-                
-            })
-        } catch (err) {
-            console.log(err)
-        }
-    }
 
     
 
@@ -36,11 +19,6 @@ const ShopCard = ({product}) => {
     }
   }
 
-  useEffect(() => {
-    if(sessionStorage.getItem('user')){
-      getUserCart()
-    }
-}, [])
 
   
 

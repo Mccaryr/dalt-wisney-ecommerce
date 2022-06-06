@@ -1,24 +1,56 @@
-.header-container {
-    display: grid;
-    justify-content: space-between;
-    height: 63px;
-    max-width: 100%;
-    background-color: #212325;
-    grid-template-columns: 900px 100px 150px 100px;
-    margin-left: 10%;
-    margin-right: 20%;
+@media (min-width: 950px) {
+    .header-container {
+        display: grid;
+        justify-content: space-between;
+        height: 10vh;
+        background-color: #212325;
+        grid-template-columns: 0.5fr 4fr 1fr 1.5fr;
+        margin-left: 10vw;
 
-    button {
-        background-color:transparent; 
-        color:white; 
-        line-height:4em; 
-        display:flex;
-        justify-content:flex-end; 
-        border:none;
-        cursor:pointer;
+        .hamburger-menu {
+            display:none
+        }
+    
+        button {
+            background-color:transparent; 
+            color:white; 
+            line-height:4em; 
+            display:flex;
+            justify-content:flex-end; 
+            border:none;
+            cursor:pointer;
+        }
+    
+        button:hover {
+            color: rgb(0, 140, 255);
+        }
     }
+}
 
-    button:hover {
-        color: rgb(0, 140, 255);
+@media (max-width: 949px) {
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+    
+        .navbar {
+            display:none;
+        }
+
+        .hamburger-menu {
+          color:white;
+        }
+
+        button {
+            background-color:transparent; 
+            color:white; 
+            line-height:4em; 
+            display:flex;
+            justify-content:flex-end; 
+            border:none;
+            cursor:pointer;
+        }
     }
 }
