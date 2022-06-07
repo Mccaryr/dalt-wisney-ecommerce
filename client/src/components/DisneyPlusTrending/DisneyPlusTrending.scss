@@ -1,28 +1,44 @@
-.disney-plus-trending-container {
+.disney-plus-section{
     background-color: #152238;
     color:white;
-    display:grid;
-    align-content: center;
+    padding: 2vh 0vh 2vh 0vh;
+    
+
+    h1 {
+        text-align: center;
+        margin-bottom: 5vh;
+    }
+
+.disney-plus-trending-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding-bottom:2rem;
+    gap:5vw;
+    flex-wrap: wrap;
+    // margin-left:10vw;
+    // margin-right:10vw;
+    // margin-left:5vw;
     
-    
-    .disney-images-trending {
-        display: flex;
-        gap: 10px;
 
-        img {
-            width:80%;
+    .card-container { 
+        justify-content: center;
+        
+    
+        .disney-plus-trending-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+    
+            a {
+                text-decoration: underline;
+            }
+
         }
     }
-
-    .disney-plus-trending-text-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        a {
-            text-decoration: underline;
-        }
-    }
+    
+    
+    
+}
 }

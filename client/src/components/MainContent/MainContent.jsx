@@ -8,8 +8,7 @@ const MainContent = () => {
     <div className='main-content-container'>
     <div className='background-image' style={{backgroundImage:`url(${DrStrangeBackground})`}}>
         <div className='background-image-container'>
-            <img src={DrStrangeLogo} alt="Dr Strange Multiverse of Madness" style={{width:'50%', opacity:'1'}}/>
-            <p>Tickets are now on sale. Experience it ony in theaters May 6.</p>
+            <img src={DrStrangeLogo} className='drstrange-logo' alt="Dr Strange Multiverse of Madness"/>
             <button className='get-tix-button'>Get Tickets</button>
             <button className='button' style={{backgroundColor:'transparent', borderColor:'white'}}>Watch Trailer</button>
         </div>

@@ -1,58 +1,124 @@
-.main-content-container {
-    margin-bottom: 5vh;
-}
-
-
-
-.background-image-container {
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr 1fr; 
-    margin-right: 280px; 
+@media (min-width: 950px) {
     
+    
+    
+    
+    .background-image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-left: 10vw;
 
-    p {
-        color:white
+    
+        .drstrange-logo {
+            width:50%;
+            opacity:0.8
+        }
+        
+    
+        
+          
     }
-      
+    
+    .background-image {
+        height:50vh;
+        display:flex;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin:0;
+        padding:0;
+    }
+
+    .button {
+        border-radius:40px;
+        font-size:15px;
+        color:white;
+        width:240px;
+        height:48px;
+        font-weight:bold;
+    }
+    
+    .get-tix-button {
+        background-color:#AF2726;
+        border:none;
+        border-radius:40px;
+        font-size:15px;
+        color:white;
+        width:240px;
+        height:48px;
+        font-weight:bold;
+    
+        
+    }
+    
+    
+    
+    
 }
 
-.background-image {
-    width:80%;
-    height:600px;
-    display:grid;
-    align-content:center;
-    justify-content:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    margin:auto;
-    transition: transform .2s;
-}
 
-.button {
-    border-radius:40px;
-    font-size:15px;
-    color:white;
-    width:240px;
-    height:48px;
-    font-weight:bold;
-}
 
-.get-tix-button {
-    background-color:#AF2726;
-    border:none;
-    border-radius:40px;
-    font-size:15px;
-    color:white;
-    width:240px;
-    height:48px;
-    font-weight:bold;
+@media (max-width:949px) {
+    .background-image-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        
+       
+    
+        .drstrange-logo {
+            width:40%;
+            opacity:0.8
+        }
+        
+    
+        
+          
+    }
+    
+    .background-image {
+        height:50vh;
+        display:flex;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin:0;
+        padding:0;
+    }
+
+    .button {
+        border-radius:40px;
+        font-size:15px;
+        color:white;
+        width:140px;
+        height:40px;
+        font-weight:bold;
+        margin-left: 20px;
+    }
+    
+    .get-tix-button {
+        background-color:#AF2726;
+        border:none;
+        border-radius:40px;
+        font-size:15px;
+        color:white;
+        width:140px;
+        height:40px;
+        font-weight:bold;
+        margin-left: 20px;
+        
+    }
 
     
 }
+
 
 .get-tix-button:hover {
     background-color: #c72c2c;
 }
+
 
 
  
