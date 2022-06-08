@@ -1,0 +1,36 @@
+.carousel {
+    position: relative;
+    height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+    img {
+        width:100vw;
+        height: 80vh;
+        border-radius: 10px;
+    }
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right:32px;
+    color: black;
+    font-size:3rem;
+    z-index:5;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    left:32px;
+    color: black;
+    font-size:3rem;
+    z-index:5;
+    cursor: pointer;
+    user-select: none;
+}

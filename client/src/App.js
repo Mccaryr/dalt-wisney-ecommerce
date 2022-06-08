@@ -3,10 +3,10 @@ import {useEffect, useState} from 'react'
 import Header from './components/Header/Header';
 import Home from './Home';
 import SignInModal from './components/SignInModal/SignInModal'
-import UnderConstruction from './components/UnderConstruction/UnderConstruction';
 import DisneyPlus from './components/DisneyPlus/DisneyPlus';
 import Cart from './components/Cart/Cart';
 import ShopCardList from './components/Shop/ShopCardList/ShopCardList';
+import ParksAndTravel from './components/ParksAndTravel/ParksAndTravel';
 
 const App = () => {
 
@@ -28,10 +28,10 @@ const App = () => {
     <Routes>
         <Route index element={<Home />} />
         <Route path='/shop' element={<ShopCardList />} />
-        <Route path='/parks&travel' element={<UnderConstruction />} />
-        <Route path='/movies' element={<UnderConstruction />} />
+        <Route path='/parks&travel' element={<ParksAndTravel />} />
+        {/* <Route path='/movies' element={<UnderConstruction />} /> */}
         <Route path='/disney+' element={<DisneyPlus />} />
-        <Route path='/more' element={<UnderConstruction />} />
+        {/* <Route path='/more' element={<UnderConstruction />} /> */}
         <Route path='/mycart' element={<Cart />} />
 
     </Routes>
