@@ -17,8 +17,8 @@ const MobileNavbar = () => {
         {openHamburger && <div className='mobile-navbar'><Link to="/disney+">DISNEY+</Link>
                                 <hr />
                                 <Link to="/parks&travel">PARKS & TRAVEL</Link>
-                                <hr />
-                                <Link to="/movies">MOVIES</Link>
+                                {/* <hr />
+                                <Link to="/movies">MOVIES</Link> */}
                                 <hr />
                                 <Link to="/shop">SHOP</Link>
                                 <hr />
