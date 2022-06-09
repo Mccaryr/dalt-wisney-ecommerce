@@ -1,36 +1,116 @@
-.carousel {
-    position: relative;
-    height:80vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-
-    img {
-        width:100vw;
-        height: 80vh;
-        border-radius: 10px;
+@media(min-width: 950px) {
+    .carousel {
+        position: relative;
+        height:80vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        img {
+            width:100vw;
+            height: 80vh;
+            border-radius: 10px;
+        }
+    }
+    
+    .right-arrow {
+        position: absolute;
+        top: 50%;
+        right:32px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .left-arrow {
+        position: absolute;
+        top: 50%;
+        left:32px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
     }
 }
 
-.right-arrow {
-    position: absolute;
-    top: 50%;
-    right:32px;
-    color: black;
-    font-size:3rem;
-    z-index:5;
-    cursor: pointer;
-    user-select: none;
+@media(min-width:650px) and (max-width:949px) {
+    .carousel {
+        position: relative;
+        height:75vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        img {
+            width:100vw;
+            height: 70vh;
+            border-radius: 10px;
+        }
+    }
+    
+    .right-arrow {
+        position: absolute;
+        top: 40%;
+        right:10px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .left-arrow {
+        position: absolute;
+        top: 40%;
+        left:10px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
+    }
 }
 
-.left-arrow {
-    position: absolute;
-    top: 50%;
-    left:32px;
-    color: black;
-    font-size:3rem;
-    z-index:5;
-    cursor: pointer;
-    user-select: none;
+@media(min-width:300px) and (max-width:650px) {
+    .carousel {
+        position: relative;
+        height:55vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        img {
+            width:100vw;
+            height: 50vh;
+            border-radius: 10px;
+        }
+    }
+    
+    .right-arrow {
+        position: absolute;
+        top: 30%;
+        right:10px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .left-arrow {
+        position: absolute;
+        top: 30%;
+        left:10px;
+        color: black;
+        font-size:3rem;
+        z-index:5;
+        cursor: pointer;
+        user-select: none;
+    }
 }

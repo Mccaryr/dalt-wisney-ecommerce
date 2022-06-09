@@ -17,6 +17,7 @@ const shopSlice = createSlice({
   initialState: {
       productList: [],
       cart: [],
+      cartCount: 0,
       status: null
   },
   reducers: {
@@ -36,12 +37,12 @@ const shopSlice = createSlice({
             })
         }
         axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
-        sessionStorage.setItem('cartCount', state.cart.length)
+        state.cartCount = state.cart.length;
     },
     getCart: (state, action) => {
         state.cart = []
         state.cart.push(...action.payload);
-        sessionStorage.setItem('cartCount', state.cart.length)
+        state.cartCount = state.cart.length;
     },
     removeFromCart: (state, action) => {
         const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
@@ -52,7 +53,7 @@ const shopSlice = createSlice({
         })
         state.cart = filteredList;
         axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
-        sessionStorage.setItem('cartCount', state.cart.length)
+        state.cartCount = state.cart.length;
     }
   }, 
   extraReducers: {

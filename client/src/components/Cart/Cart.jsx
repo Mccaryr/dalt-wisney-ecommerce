@@ -7,6 +7,9 @@ import './Cart.scss'
 
 const Cart = () => {
     const userCart = useSelector(state => state.products.cart)
+    const [salesTax, setSalesTax] = useState(0)
+    const [subTotal, setSubTotal] = useState(0)
+    const [totalCost, setTotalCost] = useState(0)
     const dispatch = useDispatch();
 
     const getUserCart = async () => {
@@ -25,18 +28,37 @@ const Cart = () => {
         }
     }
 
+    const calculateOrder = () => {
+      const shipping = 5.99
+      const tax = 0.06
+      let subTotal = 0.00
+      userCart.map((item) => {
+        subTotal += (parseFloat(item.price) * item.qty)
+        
+      })
+      const total = ((shipping + (subTotal * tax) + subTotal)).toFixed(2)
+      setSubTotal(subTotal.toFixed(2))
+      setSalesTax((subTotal * tax).toFixed(2))
+      setTotalCost(total)
+    }
+
     useEffect(() => {
         if(sessionStorage.getItem('user')){
           getUserCart();
-          userCart.forEach(item => {
-              console.log(item)
-          })
+          
         }
     }, [])
 
+    useEffect(() => {
+     calculateOrder(); 
+    })
+
   return (
+    <>
+    {userCart.length > 0 ?
     <div className="outer-cart-container">
-      <h1>My Bag ({sessionStorage.getItem('cartCount')})</h1>
+       
+      <h1>My Bag ({userCart.length})</h1>
       <p>____________________________________________</p>
       <div className='inner-cart-container'>
         <div className='bag-container'>
@@ -54,14 +76,23 @@ const Cart = () => {
             </div>
         <div className='order-container'>
           <h3>Order Summary</h3>
-          <p>Subtotal</p>
-          <p>Est.Shipping and Handling </p>
-          <p>Est. Sales Tax</p>
-          <p>Total</p>
+          <p>Est. Shipping and Handling: $5.99 </p>
+          <p>Est. Sales Tax: ${salesTax}</p>
+          <p>Subtotal: ${subTotal}</p>
+          <p>Total: ${totalCost}</p>
         <button>Checkout</button>
         </div>
       </div>
+      
+
     </div>
+      : 
+      <div className="outer-cart-container"><h1>No Items in Cart!</h1></div>
+       
+        
+    // <p style={{color:'white', fontSize:'50px', marginTop:'40vh', zIndex:'999'}}>No Items in Cart!</p>
+}
+    </>
   )
 }
 

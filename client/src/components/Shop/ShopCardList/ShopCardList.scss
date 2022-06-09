@@ -1,9 +1,10 @@
 .shop-card-list {
     margin: 0 2vw 0 2vw;
+    padding-top: 10vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 4vw;
-    margin-top: 4rem;
+    // margin-top: 4rem;
     
   
 }

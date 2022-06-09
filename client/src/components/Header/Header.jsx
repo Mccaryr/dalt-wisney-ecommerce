@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import './Header.scss'
-
 const Header = ({openModal, signedInStatus, setSignedInStatus}) => {
-  const cartCount = useSelector((state) => state.products.cart.length)
-  
+  const cartCount = useSelector(state => state.products.cartCount)
+
 
   const logout = () => {
     sessionStorage.clear();

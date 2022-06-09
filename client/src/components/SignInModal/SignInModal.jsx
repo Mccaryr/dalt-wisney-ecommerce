@@ -10,6 +10,7 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
   const dispatch = useDispatch();
 
 
+
   const loginUser = async () => {
 
     try {
@@ -50,18 +51,18 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
     if(sessionStorage.getItem('user')){
       getUserCart()
     }
-}, [])
+})
 
   return (
     <div className='modal-background'>
-    <div className='modal-container'>
-      <div className='close-button'>
-      <button style={{float:'right', backgroundColor:'transparent', color:'#6EBAF2', fontSize:'25px', border:'none' }} onClick={()=> closeModal(false)}>X</button>
+      <div className='modal-container'>
+        <div className='close-button'>
+          <button style={{float:'right', backgroundColor:'transparent', color:'#6EBAF2', fontSize:'25px', border:'none' }} onClick={()=> closeModal(false)}>X</button>
+        </div>
+        <img src={DisneyAccount} alt="disney account logo"/>
+        <input type="text" placeholder="email" onChange={(e)=> setEmailInput(e.target.value)}/>
+        <button style={{backgroundColor:'#6EBAF2', width:'300px', borderRadius:'5px', padding:'10px', color:'white', marginTop:'20px'}} onClick={loginUser}>Login with Email</button>
       </div>
-      <img src={DisneyAccount} alt="disney account logo"/>
-      <input type="text" placeholder="email" onChange={(e)=> setEmailInput(e.target.value)}/>
-      <button style={{backgroundColor:'#6EBAF2', width:'300px', borderRadius:'5px', padding:'10px', color:'white', marginTop:'20px'}} onClick={loginUser}>Login with Email</button>
-    </div>
     </div>
   )
 }

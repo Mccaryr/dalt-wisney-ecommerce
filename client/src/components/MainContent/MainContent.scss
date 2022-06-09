@@ -22,7 +22,7 @@
     }
     
     .background-image {
-        height:50vh;
+        height:60vh;
         display:flex;
         background-position: center;
         background-size: cover;
@@ -64,13 +64,16 @@
     .background-image-container {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-        
+        gap: 1rem;
+        // align-items: center;
+        justify-content: center;
        
     
         .drstrange-logo {
             width:40%;
-            opacity:0.8
+            opacity:0.8;
+            margin-top:10vh;
+            margin-left:5vw;
         }
         
     
@@ -79,7 +82,7 @@
     }
     
     .background-image {
-        height:50vh;
+        height:35vh;
         display:flex;
         background-position: center;
         background-size: cover;
