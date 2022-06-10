@@ -4,7 +4,7 @@ const express = require('express')
 const app = express();
 const cors = require('cors')
 const mongoose = require('mongoose')
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 
 
@@ -31,11 +31,11 @@ if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, '/client/build')));
     
     //Serves up client files from server
-    app.get('*', (req, res) => {
+    app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
 } 
 
 
 app.use("*", (req, res) => res.status(404).json({error: "Not Found"}))
-app.listen(port, () => console.log('Server Started'))
+app.listen(PORT, () => console.log('Server Started'))
