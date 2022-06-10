@@ -1,9 +1,11 @@
 require('dotenv').config();
-
+const path = require('path')
 const express = require('express')
 const app = express();
 const cors = require('cors')
 const mongoose = require('mongoose')
+const port = process.env.PORT || 5000
+
 
 
 mongoose.connect(process.env.MONGO_URL)
@@ -23,6 +25,17 @@ app.use('/api/cart', cartRouter)
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
-app.use("*", (req, res) => res.status(404).json({error: "Not Found"}))
 
-app.listen(5000, () => console.log('Server Started'))
+//Allows access to all client files from server
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/client/build')));
+    
+    //Serves up client files from server
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
+} 
+
+
+app.use("*", (req, res) => res.status(404).json({error: "Not Found"}))
+app.listen(port, () => console.log('Server Started'))

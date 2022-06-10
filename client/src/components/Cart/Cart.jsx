@@ -16,7 +16,7 @@ const Cart = () => {
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
         
         try {
-            await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
+            await axios.get(`/api/cart/${user_id}`).then((response) => {
               if(response.data.cart){
                 dispatch(getCart(response.data.cart))
               } 

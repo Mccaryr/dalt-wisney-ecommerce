@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getProducts = createAsyncThunk(
     'products/getProducts',
     async () => {
-        return await fetch('http://localhost:5000/api/products').then((res) => 
+        return await fetch('/api/products').then((res) => 
             res.json()
         )
     }
@@ -36,7 +36,7 @@ const shopSlice = createSlice({
                 }
             })
         }
-        axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        axios.put(`/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     },
     getCart: (state, action) => {
@@ -52,7 +52,7 @@ const shopSlice = createSlice({
             
         })
         state.cart = filteredList;
-        axios.put(`http://localhost:5000/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        axios.put(`/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     }
   }, 

@@ -14,7 +14,7 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
   const loginUser = async () => {
 
     try {
-      await axios.get(`http://localhost:5000/user/${emailInput}`).then((response) => {
+      await axios.get(`/user/${emailInput}`).then((response) => {
         sessionStorage.setItem('user', JSON.stringify(response.data[0]));        
         if(sessionStorage.getItem('user') !== "undefined") {
           setSignedInStatus(true)
@@ -35,7 +35,7 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
   const getUserCart = async () => {
     const user_id = JSON.parse(sessionStorage.getItem('user'))._id
     try {
-        await axios.get(`http://localhost:5000/api/cart/${user_id}`).then((response) => {
+        await axios.get(`/api/cart/${user_id}`).then((response) => {
           if(response.data.cart){
             dispatch(getCart(response.data.cart))
           } 
