@@ -5,6 +5,7 @@ import ShopDisney from '../../assets/shop_disney.png'
 import DisneyPlusAnime from '../../assets/disney_plus_anime.png'
 import './AdCardList.scss'
 
+
 const AdCardList = () => {
   return (
     <div className='card-list'>
