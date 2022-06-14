@@ -13,6 +13,17 @@
             text-align: center;
             justify-content: center;
             color:white;
+
+
+            h1 {
+                font-size: 5vw;
+                margin-top: 10vh;
+            }
+
+
+            p {
+                font-size: 2vw;
+            }
     
     
             .email-container {
@@ -46,10 +57,7 @@
                 
             }
     
-            h1 {
-                font-size: 5vw;
-                margin-top: 10vh;
-            }
+            
     
             
         }
@@ -82,7 +90,7 @@
 }
 
 
-@media(max-width:949px) {
+@media(max-width:949px) and (min-width:650px) {
     .container {
         background-image: url("../../assets/disney_plus_bg.png");
         background-position: fixed;
@@ -102,6 +110,10 @@
             h1 {
                 font-size: 5vw;
                 margin-top: 10vh;
+            }
+
+            p {
+                font-size: 3vw;
             }
     
     
@@ -154,6 +166,102 @@
             img {
                 width:50vw;
                 height:50vh;
+            }
+    
+    
+            .text-container {
+                line-height: 2em;
+                vertical-align: middle;
+                
+
+                h1 {
+                    text-align: center;
+                    justify-content: center;
+                }
+            }
+    
+            
+        }
+    }
+}
+
+@media(max-width:649px) {
+    .container {
+        background-image: url("../../assets/disney_plus_bg.png");
+        background-position: fixed;
+        background-repeat: no-repeat;
+        background-size:contain;
+        
+    
+        .disney-bundle-container {
+            display: grid;
+            box-sizing: border-box;
+            grid-template-columns: auto;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            color:white;
+
+
+            h1 {
+                font-size: 6vw;
+                margin-top: 8vh;
+            }
+
+            p {
+                font-size: 3vw;
+            }
+    
+    
+            .email-container {
+                align-items: center;
+                justify-content: center;
+                
+
+                input {
+                    background-color: rgb(71, 71, 71);
+                    color:white;
+                    width:200px;
+                    height:30px;
+                    padding:0;
+                    margin:0;
+                    border:none;
+                    text-align: center;
+                    vertical-align: middle;
+                    border-radius: 4px 0 0 4px;
+                }
+        
+                button {
+                    color:white;
+                    background-color: rgb(0, 89, 255);
+                    border-radius: 0 4px 4px 0;
+                    padding:0;
+                    width:120px;
+                    height:30px;
+                    font-size: 10px;
+                    border:none;
+                    vertical-align: middle;
+
+                }
+                
+            }
+    
+            
+    
+            
+        }
+    
+        .headliner-ad {
+            display:flex;
+            flex-direction: column;
+            padding-top: 5vh;
+            color:white;
+            background-color: rgb(4, 4, 20);
+
+
+            img {
+                width:100vw;
+        
             }
     
     
