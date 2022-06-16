@@ -1,46 +1,103 @@
-.disney-plus-section{
-    background-color: #152238;
-    color:white;
-    padding: 2vh 0vh 2vh 0vh;
-    
-
-    h1 {
-        text-align: center;
-        margin-bottom: 5vh;
-    }
-
-.disney-plus-trending-container {
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap:5vw;
-    flex-wrap: wrap;
-    
-    
-
-    .card-container { 
-        justify-content: center;
-
-        img {
-            width:100vw;
-        }
+@media(min-width:950px) {
+    .disney-plus-section{
+        background-color: #152238;
+        color:white;
+        padding: 2vh 0vh 2vh 0vh;
         
     
-        .disney-plus-trending-text-container {
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            
-    
-            a {
-                text-decoration: underline;
-            }
-
+        h1 {
+            text-align: center;
+            margin-bottom: 5vh;
         }
+    
+    .disney-plus-trending-container {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap:5vw;
+        flex-wrap: wrap;
+        font-size: 22px;
+        
+    
+        .card-container { 
+            display: flex;
+            flex-direction: column;
+            width:70vw;
+    
+            // img {
+            //     align-items: center;
+            //     justify-content: center;
+               
+            // }
+            
+        
+            .disney-plus-trending-text-container {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                
+        
+                a {
+                    text-decoration: underline;
+                }
+    
+            }
+        }
+        
+        
+        
     }
-    
-    
-    
+    }
 }
+
+
+@media(max-width:949px) {
+    .disney-plus-section{
+        background-color: #152238;
+        color:white;
+        padding: 2vh 0vh 2vh 0vh;
+        
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 5vh;
+        }
+    
+    .disney-plus-trending-container {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap:5vw;
+        flex-wrap: wrap;
+        
+        
+    
+        .card-container { 
+            justify-content: center;
+    
+            img {
+                width:100vw;
+               
+            }
+            
+        
+            .disney-plus-trending-text-container {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                
+        
+                a {
+                    text-decoration: underline;
+                }
+    
+            }
+        }
+        
+        
+        
+    }
+    }
 }
