@@ -15,7 +15,7 @@ const ShopCard = ({product}) => {
       dispatch(addToCart({_id: product._id, name: product.name, price: product.price, url: product.url, qty: 1}));
     }
     else {
-      alert("Please sign in to add items to cart")
+      alert("Please sign in to add items to cart, you can try test@email.com to demo")
     }
   }
 
