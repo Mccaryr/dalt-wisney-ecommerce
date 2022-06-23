@@ -7,7 +7,7 @@ import './AdCardList.scss'
 
 
 
-const AdCardList = () => {
+const AdCardList: React.FC = () => {
   return (
     <div className='card-list'>
         <div className='card'>

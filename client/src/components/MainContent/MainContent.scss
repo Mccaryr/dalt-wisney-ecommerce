@@ -1,6 +1,13 @@
 @media (min-width: 950px) {
     
-    
+    .main-content-container {
+        display: flex;
+        overflow: hidden;
+        width:99vw;
+        align-items: center;
+        justify-content: center;
+        
+    }
     
     
     .background-image-container {
@@ -9,7 +16,6 @@
         justify-content: center;
         gap: 1rem;
         margin-left: 10vw;
-
     
         .drstrange-logo {
             width:50%;
@@ -22,14 +28,24 @@
     }
     
     .background-image {
-        height:60vh;
+        height:70vh;
+        width: 99vw;
         display:flex;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         margin:0;
         padding:0;
+        transition: transform 1s ease;
+        
+       
     }
+
+    .background-image:hover {
+        transform: scale(1.05);
+    }
+
+    
 
     .button {
         border-radius:40px;

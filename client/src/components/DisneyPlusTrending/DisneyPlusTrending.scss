@@ -23,21 +23,18 @@
         .card-container { 
             display: flex;
             flex-direction: column;
-            width:70vw;
-    
-            // img {
-            //     align-items: center;
-            //     justify-content: center;
-               
-            // }
+            width:40vw;
+
+            
             
         
             .disney-plus-trending-text-container {
                 display:flex;
                 flex-direction: column;
                 align-items: center;
-                
-        
+                padding: 10px;
+                height:25vh;
+
                 a {
                     text-decoration: underline;
                 }
@@ -87,7 +84,9 @@
                 display:flex;
                 flex-direction: column;
                 align-items: center;
-                
+                padding: 10px;
+                font-size: 18px;
+                text-align: center;
         
                 a {
                     text-decoration: underline;

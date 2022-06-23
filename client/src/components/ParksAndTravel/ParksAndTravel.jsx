@@ -30,23 +30,23 @@ const ParksAndTravel = () => {
     
 
   return (
-      <div>
+      <div className='parksandtravel-container'>
           <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
-        <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
+          <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
       
-    <div className="carousel">
-        {CarouselData.map((slide, index) => {
-            return(
-                <div key={index}>
-                    {index === currentSliderImage && (
+        <div className="carousel">
+            {CarouselData.map((slide, index) => {
+                return(
+                    <div key={index}>
+                        {index === currentSliderImage && (
 
-                        <img src={slide.image} alt="disney travel slides" />
-                    )}
-                </div>
+                            <img src={slide.image} alt="disney travel slides" />
+                        )}
+                    </div>
             )
         })}
-    </div>
-    </div>
+        </div>
+      </div>
   )
 }
 

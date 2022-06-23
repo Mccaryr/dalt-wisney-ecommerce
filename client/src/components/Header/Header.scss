@@ -1,20 +1,52 @@
 @media (min-width: 950px) {
+    // .header-container {
+    //     display: grid;
+    //     position:fixed; 
+    //     background-color: #212325;
+    //     width:100vw;
+    //     grid-template-columns: 0.5fr 4fr 1fr 1.5fr;
+    //     z-index: 10;
+        
+    
+    //     button {
+    //         background-color:transparent; 
+    //         color:white; 
+    //         line-height:4em; 
+    //         display:flex;
+    //         justify-content:flex-end; 
+    //         border:none;
+    //         cursor:pointer;
+    //     }
+    
+    //     button:hover {
+    //         color: rgb(0, 140, 255);
+    //     }
+    // }
+
+
+
+
     .header-container {
-        display: grid;
+        display: flex;
+        justify-content: space-around;
         position:fixed; 
-        justify-content: space-between;
         background-color: #212325;
         width:100vw;
-        grid-template-columns: 0.5fr 4fr 1fr 1.5fr;
         z-index: 10;
+
+
+        .nav-container {
+            display: flex;
+
+        }
         
     
         button {
             background-color:transparent; 
             color:white; 
             line-height:4em; 
-            display:flex;
-            justify-content:flex-end; 
+            // display:flex;
+            // justify-content:flex-end; 
             border:none;
             cursor:pointer;
         }
