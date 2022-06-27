@@ -1,6 +1,6 @@
 import {useState, useEffect}from 'react'
 import { CarouselData } from '../CarouselData/CarouselData'
-import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa'
+import {FaArrowAltCircleLeft, FaArrowAltCircleRight} from 'react-icons/fa'
 import './ParksAndTravel.scss'
 
 const ParksAndTravel = () => {

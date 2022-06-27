@@ -1,7 +1,7 @@
-import MickyMinny from '../../assets/Carousel/minnie_mickey.png'
-import StarWars from '../../assets/Carousel/star_wars.png'
-import ToyStory from '../../assets/Carousel/toy_story.png'
-import PixarPier from '../../assets/Carousel/pixar_pier.png'
+import MickyMinny from '../../assets/Carousel/minnie_mickey.webp'
+import StarWars from '../../assets/Carousel/star_wars.webp'
+import ToyStory from '../../assets/Carousel/toy_story.webp'
+import PixarPier from '../../assets/Carousel/pixar_pier.webp'
 
 
 export const CarouselData = [

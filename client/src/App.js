@@ -29,9 +29,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path='/shop' element={<ShopCardList />} />
         <Route path='/parks&travel' element={<ParksAndTravel />} />
-        {/* <Route path='/movies' element={<UnderConstruction />} /> */}
         <Route path='/disney+' element={<DisneyPlus />} />
-        {/* <Route path='/more' element={<UnderConstruction />} /> */}
         <Route path='/mycart' element={<Cart />} />
 
     </Routes>

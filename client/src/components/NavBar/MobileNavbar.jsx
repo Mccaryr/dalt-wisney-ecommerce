@@ -17,8 +17,6 @@ const MobileNavbar = () => {
         {openHamburger && <div className='mobile-navbar'><Link to="/disney+" onClick={() => setOpenHamburger(!openHamburger)}>DISNEY+</Link>
                                 <hr />
                                 <Link to="/parks&travel" onClick={() => setOpenHamburger(!openHamburger)}>PARKS & TRAVEL</Link>
-                                {/* <hr />
-                                <Link to="/movies">MOVIES</Link> */}
                                 <hr />
                                 <Link to="/shop" onClick={() => setOpenHamburger(!openHamburger)}>SHOP</Link>
                                 <hr />

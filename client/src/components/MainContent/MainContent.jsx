@@ -1,5 +1,5 @@
 import React from 'react'
-import DrStrangeBackground from '../../assets/drstrange_background.png'
+import DrStrangeBackground from '../../assets/strange_background.webp'
 import DrStrangeLogo from '../../assets/drstrange_logo.png'
 import './MainContent.scss'
 
