@@ -11,13 +11,13 @@ const ShopCardList = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
-  
+
 
   return (
     <div className='shop-card-list'>
-      {productData.map((product) => (
+      {productData && productData.map((product) => (
 
-        <ShopCard product={product} key={`${product.id}${product.name}`}/>
+        <ShopCard product={product} key={`${product.id}`}/>
       ))}
     </div>
   )

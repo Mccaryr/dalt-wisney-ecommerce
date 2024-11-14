@@ -6,6 +6,12 @@
         width:99vw;
         align-items: center;
         justify-content: center;
+
+        button:hover {
+            background-color: white !important;
+            color: black;
+            cursor: pointer;
+        }
         
     }
     

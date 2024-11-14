@@ -7,10 +7,6 @@ const DisneyPlus = () => {
     <div className='container'>
       <div className="disney-bundle-container">
         <pre><h1>Hulu     Disney+     ESPN+</h1></pre>
-        <strong><p>Enter your email to create or restart you subscription</p></strong>
-        <div className="email-container">
-          <input type="text" placeholder="Email" /><button>GET THE DISNEY BUNDLE</button>
-        </div>
       </div>
       <div className="headliner-ad">
         <img src={HeadlinerAd} alt="headliner ad" />   

@@ -9,8 +9,9 @@ const MainContent = () => {
     <div className='background-image' style={{backgroundImage:`url(${DrStrangeBackground})`}}>
         <div className='background-image-container'>
             <img src={DrStrangeLogo} className='drstrange-logo' alt="Dr Strange Multiverse of Madness"/>
-            <button className='get-tix-button'>Get Tickets</button>
-           <a href="https://www.youtube.com/watch?v=aWzlQ2N6qqg"> <button className='button' style={{backgroundColor:'transparent', borderColor:'white'}}>Watch Trailer</button></a>
+           <button className='button' style={{backgroundColor:'transparent', borderColor:'white', marginTop:'30px'}} onClick={() => window.open(`https://www.youtube.com/watch?v=aWzlQ2N6qqg`, '_blank')}>
+               Watch Trailer
+           </button>
         </div>
 
     </div>

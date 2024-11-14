@@ -4,9 +4,8 @@ import axios from 'axios'
 export const getProducts = createAsyncThunk(
     'products/getProducts',
     async () => {
-        return await fetch('/api/products').then((res) => 
-            res.json()
-        )
+        return await fetch('https://fakestoreapi.com/products')
+            .then(res=>  res.json())
     }
 )
 
@@ -61,6 +60,7 @@ const shopSlice = createSlice({
         state.status = 'loading'
     },
     [getProducts.fulfilled]: (state, {payload}) => {
+        console.log("getProducts reducer payload: ", payload)
         state.productList = payload;
         state.status = 'success'
     }, 

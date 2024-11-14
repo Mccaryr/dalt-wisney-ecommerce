@@ -19,16 +19,15 @@ const Header = ({openModal, signedInStatus, setSignedInStatus}) => {
     <div className='header-container'>
         <MobileNavbar />
         <div className="nav-container">
-          <Link to="/"><img style={{width:'95px', height:'40px', padding:'15px'}} src="https://static-mh.content.disney.io/matterhorn/assets/goc/disney_logo_dark@2x-45d70f7dd57b.png" alt="disney logo"></img></Link>
           <NavBar className='navbar'/>
         </div>
-        
+
         {signedInStatus ?
-        <>
-        <Link to='/'><button style={{padding:'5px'}} onClick={() => logout()}>LOGOUT</button></Link>
+        <div>
+        <Link to='/'><button style={{padding:'5px', fontWeight:'bold', fontSize:'14px', fontFamily:'Lato, sans-serif'}} onClick={() => logout()}>LOGOUT</button></Link>
         <Link to='/mycart'><button style={{padding:'8px'}}><img src={ShoppingCartIcon} alt="Shopping Cart" />My Cart ({cartCount})</button></Link>
-        </>
-        : <button onClick={()=> openModal(true)} style={{padding:'8px'}}>SIGN IN</button>
+        </div>
+        : <button onClick={()=> openModal(true)} style={{padding:'8px', fontWeight:'bold', fontSize:'14px', fontFamily:'Lato, sans-serif'}}>SIGN IN</button>
         }
     </div>
   )
