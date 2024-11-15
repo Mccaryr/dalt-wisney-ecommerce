@@ -23,9 +23,9 @@ const Header = ({openModal, signedInStatus, setSignedInStatus}) => {
         </div>
 
         {signedInStatus ?
-        <div>
+        <div style={{display:'flex'}}>
         <Link to='/'><button style={{padding:'5px', fontWeight:'bold', fontSize:'14px', fontFamily:'Lato, sans-serif'}} onClick={() => logout()}>LOGOUT</button></Link>
-        <Link to='/mycart'><button style={{padding:'8px'}}><img src={ShoppingCartIcon} alt="Shopping Cart" />My Cart ({cartCount})</button></Link>
+        <Link to='/mycart'><button style={{padding:'8px', fontWeight:'bold', fontSize:'14px', fontFamily:'Lato, sans-serif'}}><img src={ShoppingCartIcon} alt="Shopping Cart" />({cartCount})</button></Link>
         </div>
         : <button onClick={()=> openModal(true)} style={{padding:'8px', fontWeight:'bold', fontSize:'14px', fontFamily:'Lato, sans-serif'}}>SIGN IN</button>
         }

@@ -80,7 +80,7 @@ const Cart = () => {
           <p>Est. Sales Tax: ${salesTax}</p>
           <p>Subtotal: ${subTotal}</p>
           <p>Total: ${totalCost}</p>
-        <button>Checkout</button>
+        <button style={{cursor:'pointer'}}>Checkout</button>
         </div>
       </div>
       

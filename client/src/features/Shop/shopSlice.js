@@ -35,7 +35,7 @@ const shopSlice = createSlice({
                 }
             })
         }
-        axios.put(`/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        axios.put(`http://localhost:5001/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     },
     getCart: (state, action) => {
