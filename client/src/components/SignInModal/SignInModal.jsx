@@ -12,7 +12,6 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
 
 
   if(window.location.hostname === 'localhost'){
-    console.log("local dev sign on")
     hostUrl = 'http://localhost:5001'
   }
 

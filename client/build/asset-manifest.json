@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7d233c44.css",
-    "main.js": "/static/js/main.1996463a.js",
+    "main.js": "/static/js/main.b29c2e1a.js",
     "static/media/headliner_ad.png": "/static/media/headliner_ad.66b0108ec499a71c8280.png",
     "static/media/boba_fett.png": "/static/media/boba_fett.f075cfb2bbc73cc33524.png",
     "static/media/shop_disney.png": "/static/media/shop_disney.8f5036c198c543bd86a4.png",
@@ -23,10 +23,10 @@
     "static/media/waltograph42.otf": "/static/media/waltograph42.eb51fb3a50a7a8ee18f0.otf",
     "index.html": "/index.html",
     "main.7d233c44.css.map": "/static/css/main.7d233c44.css.map",
-    "main.1996463a.js.map": "/static/js/main.1996463a.js.map"
+    "main.b29c2e1a.js.map": "/static/js/main.b29c2e1a.js.map"
   },
   "entrypoints": [
     "static/css/main.7d233c44.css",
-    "static/js/main.1996463a.js"
+    "static/js/main.b29c2e1a.js"
   ]
 }
