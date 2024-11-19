@@ -9,5 +9,5 @@ GETTING STARTED:
 4. If you wish to test cart functionality then use test@email.com to sign in
 5. Have Fun!
 
-I'm always adding new features and content. Next goals are to convert project to Typescript and add testing with Jest.
-Project is hosted at https://dalt-wisney.herokuapp.com/
+I'm always adding new features and content. Next goals are to integrate with Stripe API and add testing with Jest.
+Project is hosted at https://dalt-wisney-ecommerce.onrender.com/
