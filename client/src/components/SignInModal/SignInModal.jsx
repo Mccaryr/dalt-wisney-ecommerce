@@ -6,7 +6,7 @@ import './SignInModal.scss'
 import axios from 'axios'
 
 const SignInModal = ({closeModal, setSignedInStatus}) => {
-  const [emailInput, setEmailInput] = useState('')
+  const [emailInput, setEmailInput] = useState('test@email.com')
   const dispatch = useDispatch();
 
 
@@ -57,11 +57,22 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
     <div className='modal-background'>
       <div className='modal-container'>
         <div className='close-button'>
-          <button style={{float:'right', backgroundColor:'transparent', color:'#6EBAF2', fontSize:'25px', border:'none' }} onClick={()=> closeModal(false)}>X</button>
+          <button style={{
+            float: 'right',
+            backgroundColor: 'transparent',
+            color: '#6EBAF2',
+            fontSize: '25px',
+            border: 'none',
+            cursor: 'pointer'
+          }} onClick={() => closeModal(false)}>X
+          </button>
         </div>
-        <img src={DisneyAccount} alt="disney account logo"/>
-        <input type="text" placeholder="email" onChange={(e)=> setEmailInput(e.target.value)}/>
-        <button style={{backgroundColor:'#6EBAF2', width:'300px', borderRadius:'5px', padding:'10px', color:'white', marginTop:'20px'}} onClick={loginUser}>Login with Email</button>
+        <h2 style={{fontFamily: 'Waltograph, sans-serif', fontSize: '40px', textAlign: 'center'}}>Login</h2>
+        <div className={'login-container'}>
+          <input type="text" placeholder="email" defaultValue={emailInput}
+                 onChange={(e) => setEmailInput(e.target.value)}/>
+          <button className={'submit-btn'} onClick={loginUser}>Login with Email</button>
+        </div>
       </div>
     </div>
   )

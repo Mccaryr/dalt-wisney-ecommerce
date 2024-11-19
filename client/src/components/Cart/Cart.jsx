@@ -75,12 +75,12 @@ const Cart = () => {
             ))}
             </div>
         <div className='order-container'>
-          <h3>Order Summary</h3>
+          <h3 style={{textAlign:'center'}}>Order Summary</h3>
           <p>Est. Shipping and Handling: $5.99 </p>
           <p>Est. Sales Tax: ${salesTax}</p>
           <p>Subtotal: ${subTotal}</p>
           <p>Total: ${totalCost}</p>
-        <button style={{cursor:'pointer'}}>Checkout</button>
+        <button style={{cursor:'pointer', padding:'15px'}}>Checkout</button>
         </div>
       </div>
       
