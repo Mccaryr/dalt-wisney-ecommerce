@@ -9,6 +9,13 @@ export const getProducts = createAsyncThunk(
     }
 )
 
+let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
+
+
+if(window.location.hostname === 'localhost'){
+    hostUrl = 'http://localhost:5001'
+}
+
 
 
 const shopSlice = createSlice({
@@ -30,12 +37,11 @@ const shopSlice = createSlice({
         else {
             state.cart.map(item => {
                 if(item._id === action.payload._id) {
-                    console.log(action.payload)
                     item.qty = item.qty + 1
                 }
             })
         }
-        axios.put(`http://localhost:5001/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        axios.put(`${hostUrl}/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     },
     getCart: (state, action) => {
@@ -51,7 +57,7 @@ const shopSlice = createSlice({
             
         })
         state.cart = filteredList;
-        axios.put(`/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
+        axios.put(`${hostUrl}/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     }
   }, 
