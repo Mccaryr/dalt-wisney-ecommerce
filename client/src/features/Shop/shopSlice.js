@@ -60,7 +60,6 @@ const shopSlice = createSlice({
         state.status = 'loading'
     },
     [getProducts.fulfilled]: (state, {payload}) => {
-        console.log("getProducts reducer payload: ", payload)
         state.productList = payload;
         state.status = 'success'
     }, 

@@ -12,11 +12,17 @@ const Cart = () => {
     const [totalCost, setTotalCost] = useState(0)
     const dispatch = useDispatch();
 
+    let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
+
+    if(window.location.hostname === 'localhost'){
+        hostUrl = 'http://localhost:5001'
+    }
+
     const getUserCart = async () => {
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
         
         try {
-            await axios.get(`http://localhost:5001/api/cart/${user_id}`).then((response) => {
+            await axios.get(`${hostUrl}/api/cart/${user_id}`).then((response) => {
               if(response.data.cart){
                 dispatch(getCart(response.data.cart))
               } 
@@ -88,9 +94,6 @@ const Cart = () => {
     </div>
       : 
       <div className="outer-cart-container"><h1>No Items in Cart!</h1></div>
-       
-        
-    // <p style={{color:'white', fontSize:'50px', marginTop:'40vh', zIndex:'999'}}>No Items in Cart!</p>
 }
     </>
   )
