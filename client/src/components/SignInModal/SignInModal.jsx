@@ -8,13 +8,17 @@ import axios from 'axios'
 const SignInModal = ({closeModal, setSignedInStatus}) => {
   const [emailInput, setEmailInput] = useState('test@email.com')
   const dispatch = useDispatch();
+  let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
 
 
+  if(window.location.hostname === 'localhost'){
+    hostUrl = 'http://localhost:5001'
+  }
 
   const loginUser = async () => {
 
     try {
-      await axios.get(`http://localhost:5001/user/${emailInput}`).then((response) => {
+      await axios.get(`${hostUrl}/user/${emailInput}`).then((response) => {
         sessionStorage.setItem('user', JSON.stringify(response.data[0]));        
         if(sessionStorage.getItem('user') !== "undefined") {
           setSignedInStatus(true)
@@ -35,7 +39,7 @@ const SignInModal = ({closeModal, setSignedInStatus}) => {
   const getUserCart = async () => {
     const user_id = JSON.parse(sessionStorage.getItem('user'))._id
     try {
-        await axios.get(`http://localhost:5001/api/cart/${user_id}`).then((response) => {
+        await axios.get(`${hostUrl}/api/cart/${user_id}`).then((response) => {
           if(response.data.cart){
             dispatch(getCart(response.data.cart))
           } 
