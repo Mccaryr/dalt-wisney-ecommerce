@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7d233c44.css",
+    "main.js": "/static/js/main.1996463a.js",
+    "static/media/headliner_ad.png": "/static/media/headliner_ad.66b0108ec499a71c8280.png",
+    "static/media/boba_fett.png": "/static/media/boba_fett.f075cfb2bbc73cc33524.png",
+    "static/media/shop_disney.png": "/static/media/shop_disney.8f5036c198c543bd86a4.png",
+    "static/media/death_star.png": "/static/media/death_star.30ab97bac656e33f83ac.png",
+    "static/media/disney_plus_anime.png": "/static/media/disney_plus_anime.653da0abe1476141c618.png",
+    "static/media/drstrange_logo.png": "/static/media/drstrange_logo.76fc976f442e71f60ebd.png",
+    "static/media/toy_story.webp": "/static/media/toy_story.87bea0d0696ba125a926.webp",
+    "static/media/star_wars.webp": "/static/media/star_wars.d586960f115346aeb9b5.webp",
+    "static/media/moon_knight_promo.png": "/static/media/moon_knight_promo.766204154b64e0f67efb.png",
+    "static/media/boba_fett_promo.png": "/static/media/boba_fett_promo.222dcdff18ba276d0e2a.png",
+    "static/media/pixar_pier.webp": "/static/media/pixar_pier.c607278a72540ac8743d.webp",
+    "static/media/minnie_mickey.webp": "/static/media/minnie_mickey.fc41ad7b268700e229a1.webp",
+    "static/media/strange_background.webp": "/static/media/strange_background.6f6a80d9b46568c3fff7.webp",
+    "static/media/cheaper_by_the_dozen.png": "/static/media/cheaper_by_the_dozen.3b165eb30398e9f056f4.png",
+    "static/media/buzz_lightyear.png": "/static/media/buzz_lightyear.b45f4612dcad34bffde0.png",
+    "static/media/disney_plus_bg.webp": "/static/media/disney_plus_bg.dd83a0e0a152d82f682c.webp",
+    "static/media/polar_bear.png": "/static/media/polar_bear.eead4924afbc766d1568.png",
+    "static/media/moon_knight.png": "/static/media/moon_knight.37dba81a6400d90bdab2.png",
+    "static/media/waltograph42.otf": "/static/media/waltograph42.eb51fb3a50a7a8ee18f0.otf",
+    "index.html": "/index.html",
+    "main.7d233c44.css.map": "/static/css/main.7d233c44.css.map",
+    "main.1996463a.js.map": "/static/js/main.1996463a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d233c44.css",
+    "static/js/main.1996463a.js"
+  ]
+}
