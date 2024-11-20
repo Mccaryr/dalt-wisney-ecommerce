@@ -32,7 +32,7 @@ const ShopCard = ({product}) => {
       dispatch(addProductToDBCart({newCart})).then((resp) => {
           if(resp) {
               dispatch(addToCart(cartItem))
-              dispatch(setToastDetails({visible: true, status: "Success", message:"Item Added to Cart!"}))
+              dispatch(setToastDetails({visible: true, status: "Success", message:"Added to Cart!"}))
           } else {
               dispatch(setToastDetails({visible: true, status: "Failed"}))
           }

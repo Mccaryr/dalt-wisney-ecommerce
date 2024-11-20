@@ -22,13 +22,11 @@ const Cart = () => {
 
     const getUserCart = async () => {
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
-        
         try {
             await axios.get(`${hostUrl}/api/cart/${user_id}`).then((response) => {
               if(response.data.cart){
                 dispatch(getCart(response.data.cart))
-              } 
-
+              }
             })
         } catch (err) {
             console.log(err)

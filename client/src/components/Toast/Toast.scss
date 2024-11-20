@@ -3,10 +3,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  width: 30vw;  
-  height: 20vh;
+  background-color: rgb(226, 228, 228);
+  width: 30vw;
+  height: 15vh;
   border-radius: 1rem;
+  border: 2px solid white;
 
   .toast-close {
     right:0;
@@ -16,7 +17,32 @@
     padding:10px;
     outline:none;
     border:none;
+    border-radius:1rem;
     font-weight: bold;
     font-size:30px;
+    background-color: rgb(226, 228, 228);
+  }
+
+  .fa-solid.fa-check {
+    font-size:40px;
+    padding-left:1rem;
+  }
+
+  .message {
+    font-size:25px;
+  }
+}
+@media(max-width:600px) {
+  .toast-container {
+    width: 60vw !important;
+  }
+
+  .fa-solid.fa-check {
+    font-size:20px !important;
+    padding-left:0 !important;
+  }
+
+  .message {
+    font-size:15px !important;
   }
 }

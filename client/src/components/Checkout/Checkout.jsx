@@ -1,10 +1,13 @@
 import React from 'react'
 import './Checkout.scss'
 import axios from "axios";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setToastDetails} from "../../features/Toast/toastSlice";
+import {emptyCart} from "../../features/Shop/shopSlice";
 
 const Checkout = ({setCheckoutActive, getUserCart}) => {
     const userCart = useSelector(state => state.products.cart)
+    const dispatch = useDispatch();
 
 
     let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
@@ -17,20 +20,22 @@ const Checkout = ({setCheckoutActive, getUserCart}) => {
     const handleSubmit = (e) => {
         const {cardholderName, cardNumber, expMonth, expYear, cvv} = e.target
         e.preventDefault();
-
-        axios.post(`${hostUrl}/api/payments/checkout`, {
-            cardholderName: cardholderName.value,
-            cart: userCart,
-            user: JSON.parse(sessionStorage.getItem('user'))
-        }).then((response) => {
-            if(response.status === 201){
-                console.log("Payment Succeeded")
-                getUserCart()
-
-            } else {
-                console.log("Payment Failed")
-            }
-        })
+        try {
+            axios.post(`${hostUrl}/api/payments/checkout`, {
+                cardholderName: cardholderName.value,
+                cart: userCart,
+                user: JSON.parse(sessionStorage.getItem('user'))
+            }).then((response) => {
+                if(response.status === 201){
+                    dispatch(setToastDetails({visible:true, status:"Success", message: "Payment Succeeded"}))
+                    dispatch(emptyCart())
+                } else {
+                    dispatch(setToastDetails({visible:true, status:"Failed", message: "Payment Failed"}))
+                }
+            })
+        } catch(error) {
+            dispatch(setToastDetails({visible:true, status:"Failed", message: "Payment Failed"}))
+        }
     };
 
     return (

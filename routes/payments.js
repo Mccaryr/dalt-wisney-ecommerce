@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.post('/checkout', async (req, res) => {
     const { user } = req.body;
-    console.log("req.body", req.body);
     /**
      * Temp code until I build out Order functionality
      */

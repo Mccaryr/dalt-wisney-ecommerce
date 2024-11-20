@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Toast.scss'
 import {useDispatch} from "react-redux";
 import {setToastDetails} from "../../features/Toast/toastSlice";
 
 const Toast = ({toastDetails}) => {
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if(toastDetails.visible) {
+            const timer = setTimeout(() => {
+                dispatch(setToastDetails({visible: false}))
+            }, 3000)
+
+            return () => clearTimeout(timer)
+        }
+    }, [toastDetails.visible, dispatch])
 
     return (
         <div className='toast-container'>
@@ -18,9 +28,10 @@ const Toast = ({toastDetails}) => {
                         position:'absolute',
                         left:0,
                         borderRadius:'1rem 0',
-                    }}/>
-                <div><i style={{fontSize:'40px'}} className="fa-solid fa-check"></i></div>
-                <div style={{fontSize:'25px'}}>{toastDetails.message}</div>
+                    }}
+                />
+                <div><i className="fa-solid fa-check"></i></div>
+                <div className='message'>{toastDetails.message}</div>
             </div>
         </div>
     )

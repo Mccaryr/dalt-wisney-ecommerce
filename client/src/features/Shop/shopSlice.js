@@ -62,6 +62,10 @@ const shopSlice = createSlice({
         state.cart.push(...action.payload);
         state.cartCount = state.cart.length;
     },
+    emptyCart: (state, action) => {
+        state.cart = []
+        state.cartCount = state.cart.length;
+    },
     removeFromCart: (state, action) => {
         const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
         const user_id = JSON.parse(sessionStorage.getItem('user'))._id
@@ -88,6 +92,6 @@ const shopSlice = createSlice({
   }
 });
 
-export const {addToCart, getCart, removeFromCart} = shopSlice.actions
+export const {addToCart, getCart, removeFromCart, emptyCart} = shopSlice.actions
 
 export default shopSlice.reducer

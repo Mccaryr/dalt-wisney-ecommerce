@@ -16,7 +16,7 @@ const App = () => {
   const [signedIn, setSignedIn] = useState(false)
   const toastDetails = useSelector(state => state.toast)
 
-
+    
 
     useEffect (() => {
     if(sessionStorage.getItem('user')) {
