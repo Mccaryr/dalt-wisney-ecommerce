@@ -1,11 +1,13 @@
 import React from 'react'
-import { useDispatch} from 'react-redux'
-import { addToCart } from '../../../features/Shop/shopSlice'
+import {useDispatch, useSelector} from 'react-redux'
+import {addProductToDBCart, addToCart} from '../../../features/Shop/shopSlice'
 import './ShopCard.scss'
+import {setToastDetails} from "../../../features/Toast/toastSlice";
 
 
 const ShopCard = ({product}) => {
   const dispatch = useDispatch();
+  const userCart = useSelector((state) => state.products.cart)
 
   const truncateText = (str) => {
       if(str.length > 50) {
@@ -18,7 +20,23 @@ const ShopCard = ({product}) => {
 
   const addToCartDB = () => {
     if(sessionStorage.getItem('user')) {
-      dispatch(addToCart({_id: product.id, name: product.title, price: product.price, url: product.image, qty: 1}));
+      let cartItem = {
+          _id: product.id,
+          name: product.title,
+          price: product.price,
+          url: product.image,
+          qty: 1
+      }
+    let newCart = [...userCart]
+    newCart.push(cartItem)
+      dispatch(addProductToDBCart({newCart})).then((resp) => {
+          if(resp) {
+              dispatch(addToCart(cartItem))
+              dispatch(setToastDetails({visible: true, status: "Success", message:"Item Added to Cart!"}))
+          } else {
+              dispatch(setToastDetails({visible: true, status: "Failed"}))
+          }
+      })
     }
     else {
       alert("Please sign in to add items to cart, you can try test@email.com to demo")

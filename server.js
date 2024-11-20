@@ -25,15 +25,12 @@ app.use('/api/cart', cartRouter)
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
+const paymentRouter = require('./routes/payments')
+app.use('/api/payments', paymentRouter)
+
 
 //Allows access to all client files from server
 if(process.env.NODE_ENV === "production") {
-    // app.use(express.static(path.join(__dirname, '/client/build')));
-    //
-    //
-    // app.get('/', (req, res) => {
-    //     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-    // })
 
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.get('*', (req, res) => {

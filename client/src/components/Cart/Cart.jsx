@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart, getCart } from '../../features/Shop/shopSlice'
 import axios from 'axios'
 import './Cart.scss'
+import Checkout from "../Checkout/Checkout";
 
 
 const Cart = () => {
@@ -10,6 +11,7 @@ const Cart = () => {
     const [salesTax, setSalesTax] = useState(0)
     const [subTotal, setSubTotal] = useState(0)
     const [totalCost, setTotalCost] = useState(0)
+    const [checkoutActive, setCheckoutActive] = useState(false)
     const dispatch = useDispatch();
 
     let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
@@ -27,7 +29,6 @@ const Cart = () => {
                 dispatch(getCart(response.data.cart))
               } 
 
-                
             })
         } catch (err) {
             console.log(err)
@@ -80,21 +81,25 @@ const Cart = () => {
                 </div>
             ))}
             </div>
-        <div className='order-container'>
-          <h3 style={{textAlign:'center'}}>Order Summary</h3>
-          <p>Est. Shipping and Handling: $5.99 </p>
-          <p>Est. Sales Tax: ${salesTax}</p>
-          <p>Subtotal: ${subTotal}</p>
-          <p>Total: ${totalCost}</p>
-        <button style={{cursor:'pointer', padding:'15px'}}>Checkout</button>
-        </div>
+          {checkoutActive ?
+              <Checkout setCheckoutActive={setCheckoutActive} getUserCart={getUserCart} />
+              :
+              <div className='order-container'>
+                  <h3 style={{textAlign: 'center'}}>Order Summary</h3>
+                  <p>Est. Shipping and Handling: $5.99 </p>
+                  <p>Est. Sales Tax: ${salesTax}</p>
+                  <p>Subtotal: ${subTotal}</p>
+                  <p>Total: ${totalCost}</p>
+                  <button style={{cursor: 'pointer', padding: '15px'}} onClick={() => setCheckoutActive(true)}>Checkout</button>
+              </div>
+          }
       </div>
-      
+
 
     </div>
-      : 
-      <div className="outer-cart-container"><h1>No Items in Cart!</h1></div>
-}
+        :
+        <div className="outer-cart-container"><h1>No Items in Cart!</h1></div>
+    }
     </>
   )
 }

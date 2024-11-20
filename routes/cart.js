@@ -30,20 +30,5 @@ router.get('/:user_id', async (req, res) => {
     
 })
 
-/*
-Better design pattern to separate routers, models, and controllers
-
-    router
-        .route('/')
-        .get(controllers.getexample)
-        .post(controllers.createexample)
-
-
-    router
-        .route('/:id')
-        .get()
-        .put()
-        .delete()
-**/
 
 module.exports = router

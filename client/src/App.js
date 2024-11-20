@@ -7,14 +7,18 @@ import DisneyPlus from './components/DisneyPlus/DisneyPlus';
 import Cart from './components/Cart/Cart';
 import ShopCardList from './components/Shop/ShopCardList/ShopCardList';
 import ParksAndTravel from './components/ParksAndTravel/ParksAndTravel';
+import {useSelector} from "react-redux";
+import Toast from "./components/Toast/Toast";
 
 const App = () => {
 
   const [modalStatus, setModalStatus] = useState(false)
   const [signedIn, setSignedIn] = useState(false)
+  const toastDetails = useSelector(state => state.toast)
 
 
-  useEffect (() => {
+
+    useEffect (() => {
     if(sessionStorage.getItem('user')) {
       setSignedIn(true)
     }
@@ -23,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      {modalStatus &&<SignInModal closeModal={setModalStatus} setSignedInStatus={setSignedIn}/>}
+      {modalStatus && <SignInModal closeModal={setModalStatus} setSignedInStatus={setSignedIn}/>}
           <Header openModal={setModalStatus} signedInStatus={signedIn} setSignedInStatus={setSignedIn}  />
     <Routes>
         <Route index element={<Home />} />
@@ -33,6 +37,7 @@ const App = () => {
         <Route path='/mycart' element={<Cart />} />
 
     </Routes>
+    {toastDetails.visible && <Toast toastDetails={toastDetails}/>}
     </div>
         
   );

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
+
 export const getProducts = createAsyncThunk(
     'products/getProducts',
     async () => {
@@ -8,6 +9,21 @@ export const getProducts = createAsyncThunk(
             .then(res=>  res.json())
     }
 )
+
+export const addProductToDBCart = createAsyncThunk(
+    'products/addProductToCart',
+    async ({newCart}, thunkAPI) => {
+        const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
+        const user_id = JSON.parse(sessionStorage.getItem('user'))._id
+        try {
+            const response = await axios.put(`${hostUrl}/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: newCart})
+            return response.data
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
+    }
+)
+
 
 let hostUrl = 'https://dalt-wisney-ecommerce.onrender.com'
 
@@ -28,8 +44,6 @@ const shopSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-        const user_email = JSON.parse(sessionStorage.getItem('user')).user_email
-        const user_id = JSON.parse(sessionStorage.getItem('user'))._id
         const itemExist = state.cart.find(item => item._id === action.payload._id)
         if(!itemExist){
             state.cart.push(action.payload)
@@ -41,7 +55,6 @@ const shopSlice = createSlice({
                 }
             })
         }
-        axios.put(`${hostUrl}/api/cart/${user_id}`, {user_email: user_email, user_id: user_id, cart: state.cart})
         state.cartCount = state.cart.length;
     },
     getCart: (state, action) => {
