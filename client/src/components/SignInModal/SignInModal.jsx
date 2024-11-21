@@ -1,4 +1,3 @@
-import DisneyAccount from '../../assets/disney_account.png'
 import { useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { getCart } from '../../features/Shop/shopSlice'
