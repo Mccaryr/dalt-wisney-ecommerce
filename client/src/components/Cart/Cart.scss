@@ -50,8 +50,8 @@
                 border: 2px solid white;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
                 padding: 2rem;
+                height: 45%;
 
                 button {
                     color:white;
@@ -63,6 +63,7 @@
                     justify-content: center;
                     width:100%;
                     font-weight: bold;
+                    margin-top: 4rem;
                 }
 
                 button:hover {
@@ -205,6 +206,7 @@
                         font-size: 12px;
                         border:none;
                         vertical-align: middle;
+                        margin-top:1rem;
                 }
                 
             }

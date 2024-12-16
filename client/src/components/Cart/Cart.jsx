@@ -84,11 +84,15 @@ const Cart = () => {
               :
               <div className='order-container'>
                   <h3 style={{textAlign: 'center'}}>Order Summary</h3>
-                  <p>Est. Shipping and Handling: $5.99 </p>
-                  <p>Est. Sales Tax: ${salesTax}</p>
-                  <p>Subtotal: ${subTotal}</p>
-                  <p>Total: ${totalCost}</p>
-                  <button style={{cursor: 'pointer', padding: '15px'}} onClick={() => setCheckoutActive(true)}>Checkout</button>
+                  <div style={{padding:'10px'}}>
+                      <p>Est. Shipping and Handling: $5.99 </p>
+                      <p>Est. Sales Tax: ${salesTax}</p>
+                      <p>Subtotal: ${subTotal}</p>
+                      <p>Total: ${totalCost}</p>
+                  </div>
+                  <div style={{display: 'flex', justifyContent: 'center'}}>
+                      <button style={{cursor: 'pointer', padding: '15px'}} onClick={() => setCheckoutActive(true)}>Checkout</button>
+                  </div>
               </div>
           }
       </div>
